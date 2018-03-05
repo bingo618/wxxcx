@@ -4,3 +4,6 @@
 <include src="../header.wxml"/>
   <view> body </view>
 <include src="../footer.wxml"/>
+
+
+<change-color inner-text="Some text"></change-color>

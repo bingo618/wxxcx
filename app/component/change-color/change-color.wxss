@@ -1,0 +1,4 @@
+/* component/change-color/change-color.wxss */
+.inner {
+  color: red;
+}

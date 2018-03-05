@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<!-- <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -9,5 +9,83 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->
+<view class="container">
+  <view class="banner">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="section">
+    <view class="sec-header">
+      <text class='title'>精品推荐</text>
+      <text class='more'>查看更多</text>
+    </view>
+    <view class="product-list">
+      <view class='item'>
+        <!-- <image></image> -->
+        <!-- <text>1</text> -->
+      </view>
+      <view class='item'>
+        <!-- <image></image> -->
+        <!-- <text>1</text> -->
+      </view>
+      <view class='item'>
+        <!-- <image></image> -->
+        <!-- <text>1</text> -->
+      </view>
+      <view class='item'>
+        <!-- <image></image> -->
+        <!-- <text>1</text> -->
+      </view>
+    </view>
+  </view>
+  <view class='section'>
+    <view class="sec-header">
+      <text class='title'>热门商品</text>
+      <text class='more'>查看更多</text>
+    </view>
+    <view class='hot-list'>
+      <view class='item'>
+        <view class='img'></view>
+        <!-- <image></image> -->
+        <text class='sec'>这是一个很不错的商品，这是一个很不错的商品，这是一个很不错的商品，这是一个很不错的商品</text>
+      </view>
+      <view class='item'>
+        <view class='img'></view>
+        <!-- <image></image> -->
+        <text class='sec'>这是一个很不错的商品，这是一个很不错的商品，这是一个很不错的商品，这是一个很不错的商品</text>
+      </view>
+      <view class='item'>
+        <view class='img'></view>
+        <!-- <image></image> -->
+        <text class='sec'>这是一个很不错的商品，这是一个很不错的商品，这是一个很不错的商品，这是一个很不错的商品</text>
+      </view>
+      <view class='item'>
+        <view class='img'></view>
+        <!-- <image></image> -->
+        <text class='sec'>这是一个很不错的商品，这是一个很不错的商品，这是一个很不错的商品，这是一个很不错的商品</text>
+      </view>
+      <view class='item'>
+        <view class='img'></view>
+        <!-- <image></image> -->
+        <text class='sec'>这是一个很不错的商品，这是一个很不错的商品，这是一个很不错的商品，这是一个很不错的商品</text>
+      </view>
+      <view class='item'>
+        <view class='img'></view>
+        <!-- <image></image> -->
+        <text class='sec'>这是一个很不错的商品，这是一个很不错的商品，这是一个很不错的商品，这是一个很不错的商品</text>
+      </view>
+      <view class='item'>
+        <view class='img'></view>
+        <!-- <image></image> -->
+        <text class='sec'>这是一个很不错的商品，这是一个很不错的商品，这是一个很不错的商品，这是一个很不错的商品</text>
+      </view>
+    </view>
   </view>
 </view>
