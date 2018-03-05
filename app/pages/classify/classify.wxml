@@ -1,2 +1,6 @@
 <!--pages/classify/classify.wxml-->
 <text>pages/classify/classify.wxml</text>
+<text>{{goodsList.length}}</text>
+<view wx:for="{{goodsList}}">
+  <text>{{item.fname}}</text>
+</view>
