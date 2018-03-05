@@ -1,9 +1,27 @@
 <text bindtap="changedData">{{text}}</text>
-<import src="../item.wxml"/>
-<template is="item" data="{{text: 'forbar'}}"/> 
-<include src="../header.wxml"/>
-  <view> body </view>
-<include src="../footer.wxml"/>
+<import src="../item.wxml" />
+<template is="item" data="{{text: 'forbar'}}" />
+<include src="../header.wxml" />
+<view> body </view>
+<include src="../footer.wxml" />
 
 
 <change-color inner-text="Some text"></change-color>
+<button bindtap='getLocation'>获取当前地理位置</button>
+<view>
+  <text>经度： {{lat}}</text>
+  <text>维度： {{long}}</text>
+</view>
+<button bindtap="chooseAddress">打开地图选择位置</button>
+<view>
+  <text>{{address}}</text>
+</view>
+<button bindtap='getLoctionByWxMap'>使用微信内置地图查看位置</button>
+
+<view>
+  <text>15658162008</text>
+  <button bindtap='call'>打电话</button>
+</view>
+
+<button bindtap="richScan">扫一扫</button>
+<text>{{codeContent}}</text>

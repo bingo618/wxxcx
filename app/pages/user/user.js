@@ -5,15 +5,64 @@ Page({
    * 页面的初始数据
    */
   data: {
-    text: "个人中心"
+    text: "个人中心",
+    lat: null,
+    long: null,
+    address: "",
+    codeContent: ""
   },
 
-  changedData: function() {
+  changedData: function () {
     this.setData({
       text: "改变个人中心"
     })
   },
 
+  getLocation: function () {
+    wx.getLocation({
+      type: 'wgs84',
+      success: (res) => {
+        this.setData({
+          lat: res.latitude,
+          long: res.longitude
+        })
+      }
+    })
+  },
+
+  chooseAddress: function () {
+    wx.chooseLocation({
+      success: (res) => {
+        this.setData({
+          address: res.address
+        })
+      }
+    })
+  },
+  getLoctionByWxMap: function () {
+    wx.openLocation({
+      latitude: this.data.lat,
+      longitude: this.data.long,
+      success: (res) => {
+        console.log(res)
+      }
+    })
+  },
+  call: function () {
+    wx.makePhoneCall({
+      phoneNumber: '15658162008'
+    })
+  },
+  richScan: function () {
+    wx.scanCode({
+      scanType: ['qrCode', 'barCode', 'datamatrix', 'pdf417'],
+      success: (res) => {
+        this.setData({
+          codeContent: res.result
+        })
+      }
+    })
+  },
 
 
 
@@ -39,21 +88,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function (res) {
-    console.log("页面显示"+ res)
+    console.log("页面显示" + res)
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
@@ -68,13 +117,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })
